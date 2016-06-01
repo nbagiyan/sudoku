@@ -5,15 +5,91 @@
 #include <string.h>
 #include "sudoku.h"
 
+/*
+void openlevel(const char* filename) - функция открытия уровня
+Входные значения: const char* filename - имя файла, где хранится уровень
+*/
+
 void openlevel(const char* filename);
+
+/*
+int* OpenMatrix(const char* filename) - функция создания двумерного динамического массива, который используется, как игровое поля
+Входные значения: const char* filename - имя файла, где хранится уровень
+Возвращаемое значение - указатель на указатель на первый жлемент двумерного массива
+Входные значения: const char* filename - имя файла, где хранится уровень
+*/
 int* OpenMatrix(const char* filename);
+
+/*
+void fillin() - функция для заполнения уровня, доступна только разработчику
+Входные значения: нет
+Возвращаемое значение: нет
+*/
 void fiilin();
+
+
+/*
+void printlevel(int rows, int columns, int** matrix) - функция для вывода поля на экран
+Входные значения: int rows - количество строк(9)
+int columns - количество столбцов(9)
+int** matrix -адрес 1 элемента двумерного массива
+Возвращаемое значение: нет
+*/
 void printlevel(int rows, int columns, int** matrix);
+
+/*
+int checklevel(int** matrix); - функция проверки пройденной игры
+Входные значение:
+int** matrix -адрес 1 элемента двумерного массива
+Возвращаемое значение: 0 - если уровень пройден
+*/
 int checklevel(int** matrix);
+
+/*
+int isAvailable(int** matrix, int coord1, int coord2) - функция проверки пройденной игры
+Входные значение:
+int** matrix -адрес 1 элемента двумерного массива
+int coord1 - номер строчки куда нужно ставить число
+int coord2 - номер столбца куда нужно ставить число
+Возвращаемое значение: 0 - если уровень пройден
+1 - в обратном случае
+*/
 int isAvailable(int** matrix, int coord1, int coord2);
+
+/*
+void printtask(const char* name, const char surname) - функция, которая приветствует игрока и объясняет правила игры
+Входные значение:
+const char* name - указатель на массив символов с именем игрока 
+const char* surname - указатель на массив символов с именем игрока 
+Возвращаемое значение: нет
+*/
 void printtask(const char* name, const char surname);
+
+/*
+void fillavalibale(int** matrix); - функция, которая проходит по матрице и резервирует начальные поля
+Входные значение:
+const char* name - указатель на массив символов с именем игрока 
+const char* name - указатель на массив символов с именем игрока 
+Возвращаемое значение: нет
+*/
 void fillavalibale(int** matrix);
+
+/*
+void checkplayer(const char* name, const char* surname) -функция которая проверяет наличие предыдущих игр у игрока
+Входные данные:
+const char* name - указатель на массив символов с именем игрока 
+const char* name - указатель на массив символов с именем игрока 
+Возвращаемое значение: нет
+*/
 void checkplayer(const char* name, const char* surname);
+
+/*
+void addwin(const char* name, const char* surname) - функция, которая доьавляет количество побед и игр игроку
+Входные данные:
+const char* name - указатель на массив символов с именем игрока 
+const char* name - указатель на массив символов с именем игрока 
+Возвращаемое значение: нет
+*/
 void addwin(const char* name, const char* surname);
 int* main() {
 	int a = 0;
